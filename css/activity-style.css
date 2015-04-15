@@ -9,10 +9,6 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 .activity-coupon-end{ background-color:#8d0001;}
 .activity-scratch-card-winning{background: url(http://www.wxapi.cn/index/images/activity/activity-scratch-card-bg.jpg) #944f20;}
 .activity-scratch-card-end{background: url(http://www.wxapi.cn/index/images/activity/activity-scratch-card-bg.jpg) #944f20;}
-.activity-lottery-winning .main{
-    background: url(http://www.wxapi.cn/index/images/activity/activity-lottery-bg.png) no-repeat top center;
-}
-
 #outer-cont {
     position: relative;
     width: 100%;
