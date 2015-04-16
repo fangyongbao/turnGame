@@ -54,51 +54,51 @@
 		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
 		<script src="js/rotateModule.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			var dataObj = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330];
-			$(function() {
-				var rotating = false;
-				var myTurn = $("#outer").rotateModule({
-					beginAngle: 0,
-					time: 3,
-					endAngule: null,
-					callBack: function() {
-						rotating = false;
-						if (typeId == 0) {
-							alert("恭喜你获得一等奖");
-						} else if (typeId == 4) {
-							alert("恭喜你获得二等奖");
-						} else if (typeId == 8) {
-							alert("恭喜你获得三等奖");
-						} else {
-							alert("再接再厉");
-						}
+		var dataObj = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330];
+		$(function() {
+			var rotating = false;
+			var myTurn = $("#outer").rotateModule({
+				beginAngle: 0,
+				time: 3,
+				endAngule: null,
+				callBack: function() {
+					rotating = false;
+					if (typeId == 0) {
+						alert("恭喜你获得一等奖");
+					} else if (typeId == 4) {
+						alert("恭喜你获得二等奖");
+					} else if (typeId == 8) {
+						alert("恭喜你获得三等奖");
+					} else {
+						alert("再接再厉");
 					}
-				});
-				$("#inner").on("click", function() {
-					/***
-					 * ajax在后台获取0-12的随机数*
-					 * **/
-					var key = getRandom(0, 12);
-					if (!rotating) {
-						rotating = true;
-						//alert(dataObj[key] + "," + key);
-						myTurn.rotateTo(dataObj[key] + 1440);
-						typeId = key;
-					}
-				});
-			});
-
-			function getRandom(min, max) {
-				//x上限，y下限   
-				var x = max;
-				var y = min;
-				if (x < y) {
-					x = min;
-					y = max;
 				}
-				var rand = parseInt(Math.random() * (x - y + 1) + y);
-				return rand;
+			});
+			$("#inner").on("click", function() {
+				/***
+				 * ajax在后台获取0-12的随机数*
+				 * **/
+				var key = getRandom(0, 11);
+				if (!rotating) {
+					rotating = true;
+					//alert(dataObj[key] + "," + key);
+					myTurn.rotateTo(dataObj[key] + 1440);
+					typeId = key;
+				}
+			});
+		});
+
+		function getRandom(min, max) {
+			//x上限，y下限   
+			var x = max;
+			var y = min;
+			if (x < y) {
+				x = min;
+				y = max;
 			}
+			var rand = parseInt(Math.random() * (x - y + 1) + y);
+			return rand;
+		}
 		</script>
 
 	</body>
